@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 
 const DataFetching = ({endpoint}) => {
@@ -12,7 +12,15 @@ const DataFetching = ({endpoint}) => {
     getData(endpoint);
   }, [endpoint]);
 
-  return data;
+  return (
+    <ul>
+      {data?.map(({timestamp, amount}, index) => (
+        <li key={`data-${index}`}>
+          {timestamp} - ${amount}
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 DataFetching.propTypes = {
