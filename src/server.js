@@ -6,7 +6,7 @@ export function makeServer({environment = 'development'}) {
     environment,
 
     routes() {
-      this.namespace = 'api';
+      this.namespace = process.env.REACT_APP_BASE_URL;
 
       this.get('/totals', () => [...sales, ...subscriptions]);
       this.get('/sales', () => sales);
