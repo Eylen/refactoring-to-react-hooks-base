@@ -3,7 +3,9 @@ import DataFetching from '../../common/components/DataFetching';
 import Select from '../../common/components/Select';
 
 const DataFetchingContainer = () => {
-  const [selectedEndpoint, setSelectedEnpoint] = useState('totals');
+  const [selectedEndpoint, setSelectedEnpoint] = useState(
+    `${process.env.REACT_APP_BASE_URL}/totals`
+  );
 
   const optionsForSelect = [
     {label: '--', value: 'totals'},
