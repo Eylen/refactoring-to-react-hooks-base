@@ -15,7 +15,7 @@ const DataFetching = ({endpoint}) => {
   return (
     <ul>
       {data?.map(({timestamp, amount}, index) => (
-        <li key={`data-${index}`}>
+        <li key={timestamp}>
           {timestamp} - ${amount}
         </li>
       ))}
