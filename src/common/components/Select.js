@@ -10,7 +10,9 @@ const Select = ({className, id, name, value, options, onChange}) => (
     value={value}
   >
     {options.map(({label, value}) => (
-      <option value={value}>{label}</option>
+      <option key={value} value={value}>
+        {label}
+      </option>
     ))}
   </select>
 );
@@ -18,7 +20,7 @@ const Select = ({className, id, name, value, options, onChange}) => (
 Select.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
