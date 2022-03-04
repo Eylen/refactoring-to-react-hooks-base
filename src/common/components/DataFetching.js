@@ -1,16 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import Loading from './Loading';
+import useFetch from '../hooks/useFetch';
 
 const DataFetching = ({endpoint}) => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    async function getData(endpoint) {
-      const resp = await fetch(endpoint);
-      const data = await resp.json();
-      setData(data);
-    }
-    getData(endpoint);
-  }, [endpoint]);
+  const {loading, error, data} = useFetch(endpoint);
+
+  if (loading) {
+    return <Loading />;
+  }
+  if (error) {
+    return <p>Ops! Something wen wrong: {error}</p>;
+  }
 
   return (
     <ul>

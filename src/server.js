@@ -9,7 +9,7 @@ export function makeServer({environment = 'development'}) {
       this.namespace = process.env.REACT_APP_BASE_URL;
 
       this.get('/totals', () => [...sales, ...subscriptions]);
-      this.get('/sales', () => sales);
+      this.get('/sales', () => sales, {timing: 4000});
       this.get('/subscriptions', () => subscriptions);
     }
   });
