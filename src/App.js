@@ -1,13 +1,14 @@
 import React from 'react';
 import DashboardShell from './features/Dashboard/DashboardShell';
 import DashboardContext from './common/context/DashboardContext';
+import {sales} from './mocks';
 
 const dashboardInitialState = {
   loading: false,
   error: null,
-  data: [],
-  salesTotal: 0,
-  subscriptionsTotal: 0,
+  data: sales,
+  salesTotal: 140,
+  subscriptionsTotal: 220,
 };
 
 const App = () => {
