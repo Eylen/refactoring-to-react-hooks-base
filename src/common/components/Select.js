@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Select = ({className, id, label, name, value, options, onChange}) => (
+const Select = ({className, id, label, name, options, onChange}) => (
   <>
     <label htmlFor={id}>{label}</label>
-    <select
-      id={id}
-      name={name}
-      className={className}
-      onChange={onChange}
-      value={value}
-    >
+    <select id={id} name={name} className={className} onChange={onChange}>
       {options.map(({label, value}) => (
         <option key={value} value={value}>
           {label}

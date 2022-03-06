@@ -15,7 +15,7 @@ const optionsForSelect = [
 ];
 
 const DashboardShell = () => {
-  const [selectedLabel, setSelectedLabel] = useState('');
+  const [selectedLabel, setSelectedLabel] = useState(optionsForSelect[0].label);
   /*constructor(props) {
     super(props);
     this.state = { selectedLabel: "" };
@@ -43,7 +43,6 @@ const DashboardShell = () => {
           name="select-product"
           onChange={handleSelectChange}
           options={optionsForSelect}
-          value={selectedLabel}
         />
       </Aside>
       <Main>
